@@ -98,7 +98,10 @@ class EmailSMS implements DriverInterface
 
                 case 'assurancewireless':
                     return 'vmobl.com';
-
+                    
+                case 'bell':
+                    throw new \InvalidArgumentException('Bell Canada does not support Email Gateway MMS messages.');
+                    
                 case 'boostmobile':
                     return 'myboostmobile.com';
 
@@ -107,7 +110,13 @@ class EmailSMS implements DriverInterface
 
                 case 'cricket':
                     return 'mms.mycricket.com ';
-
+                
+                case 'fido':
+                    throw new \InvalidArgumentException('Fido Canada does not support Email Gateway MMS messages.');
+                
+                case 'koodo':
+                    throw new \InvalidArgumentException('Koodo Canada does not support Email Gateway MMS messages.');
+                
                 case 'metropcs':
                     return 'mymetropcs.com';
 
@@ -116,19 +125,31 @@ class EmailSMS implements DriverInterface
 
                 case 'rogerswireless':
                     return 'mms.rogers.com';
+                
+                case 'sasktel':
+                    throw new \InvalidArgumentException('SaskTel Canada does not support Email Gateway MMS messages.');
+                
+                case 'telus':
+                    throw new \InvalidArgumentException('Telus Canada does not support Email Gateway MMS messages.');
 
                 case 'unicel':
                     return 'utext.com';
 
                 case 'verizonwireless':
                     return 'vzwpix.com';
-
+                
+                case 'virgincanada':
+                    throw new \InvalidArgumentException('Virgin Mobile Canada does not support Email Gateway MMS messages.');
+                
                 case 'virginmobile':
                     return 'vmpix.com';
 
                 case 'tmobile':
                     return 'tmomail.net';
-
+            
+                case 'wind':
+                    throw new \InvalidArgumentException('Wind Mobile Canada does not support Email Gateway MMS messages.');
+                
                 default:
                     throw new \InvalidArgumentException('Carrier specified is not found.');
             }
@@ -149,6 +170,9 @@ class EmailSMS implements DriverInterface
                 case 'assurancewireless':
                     return 'vmobl.com';
 
+                case 'bell':
+                    return 'txt.bell.ca';
+
                 case 'boostmobile':
                     return 'sms.myboostmobile.com';
 
@@ -157,6 +181,12 @@ class EmailSMS implements DriverInterface
 
                 case 'cricket':
                     return 'sms.mycricket.com';
+
+                case 'fido':
+                    return 'sms.fido.ca';
+
+                case 'koodo':
+                    return 'msg.koodomobile.com';
 
                 case 'metropcs':
                     return 'mymetropcs.com';
@@ -167,17 +197,29 @@ class EmailSMS implements DriverInterface
                 case 'rogerswireless':
                     return 'sms.rogers.com';
 
+                case 'sasktel':
+                    return 'sms.sasktel.com';
+
+                case 'telus':
+                    return 'msg.telus.com';
+                
+                case 'tmobile':
+                    return 'tmomail.net';
+                    
                 case 'unicel':
                     return 'utext.com';
 
                 case 'verizonwireless':
                     return 'vtext.com';
 
+                case 'virgincanada':
+                    return 'vmobile.ca';
+
                 case 'virginmobile':
                     return 'vmobl.com';
 
-                case 'tmobile':
-                    return 'tmomail.net';
+                case 'wind':
+                    return 'txt.windmobile.ca';
 
                 default:
                     throw new \InvalidArgumentException('Carrier specified is not found.');
