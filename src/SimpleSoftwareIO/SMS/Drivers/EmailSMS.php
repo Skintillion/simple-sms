@@ -130,7 +130,7 @@ class EmailSMS implements DriverInterface
                     throw new \InvalidArgumentException('SaskTel Canada does not support Email Gateway MMS messages.');
                 
                 case 'telus':
-                    throw new \InvalidArgumentException('Telus Canada does not support Email Gateway MMS messages.');
+                    return 'mms.telusmobility.com';
 
                 case 'unicel':
                     return 'utext.com';
